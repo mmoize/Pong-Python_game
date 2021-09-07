@@ -1,4 +1,6 @@
 import turtle
+import os
+import winsound
 
 
 wn = turtle.Screen()
@@ -100,10 +102,14 @@ while True:
     if ball.ycor() > 290:
         ball.sety(290)
         ball.dy *=-1
+        winsound.PlaySound("ballbounce.wav", winsound.SND_ASYNC)
+
+
 
     if ball.ycor() < -290:
         ball.sety(-290)
         ball.dy *=-1
+
 
 
     if ball.xcor() > 390:
@@ -125,6 +131,7 @@ while True:
     if (ball.xcor() > 340 and ball.xcor() < 350) and (ball.ycor() < paddle_b.ycor() + 40 and ball.ycor() > paddle_b.ycor() - 40 ):
         ball.setx(340)
         ball.dx *= -1 
+        winsound.PlaySound("ballbounce.mp3", winsound.SND_ASYNC)
 
     if (ball.xcor() < -340 and ball.xcor() > -350) and (ball.ycor() < paddle_a.ycor() + 40 and ball.ycor() > paddle_a.ycor() - 40 ):
         ball.setx(340)
